@@ -44,7 +44,9 @@ from pycocotools.cocoeval import COCOeval
 from pycocotools import mask as maskUtils
 
 import zipfile
-import urllib.request
+# import urllib.request
+# https://github.com/matterport/Mask_RCNN/pull/515/files
+from six.moves import urllib
 import shutil
 
 # Root directory of the project

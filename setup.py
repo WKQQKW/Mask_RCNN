@@ -42,8 +42,8 @@ setup(
     packages=["mrcnn"],
     install_requires=install_reqs,
     include_package_data=True,
-    python_requires='>=3.4',
-    long_description="""This is an implementation of Mask R-CNN on Python 3, Keras, and TensorFlow. 
+    python_requires='>=2.7',
+    long_description="""This is an implementation of Mask R-CNN on Python 2, Keras, and TensorFlow. 
 The model generates bounding boxes and segmentation masks for each instance of an object in the image. 
 It's based on Feature Pyramid Network (FPN) and a ResNet101 backbone.""",
     classifiers=[
@@ -60,6 +60,7 @@ It's based on Feature Pyramid Network (FPN) and a ResNet101 backbone.""",
         "Topic :: Scientific/Engineering :: Image Recognition",
         "Topic :: Scientific/Engineering :: Visualization",
         "Topic :: Scientific/Engineering :: Image Segmentation",
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',

@@ -1,0 +1,30 @@
+version: '2.3'
+services:
+  maskrcnn:
+    image: yubaoliu/maskrcnn_ros:cuda10
+    build:
+        context: .
+    container_name: maskrcnn_ros
+    runtime: nvidia
+    # stdin_open: true
+    # tty: true
+    command: roscore
+    environment:
+        - DISPLAY
+        - QT_X11_NO_MITSHM=1
+    volumes:
+        - /tmp/.X11-unix:/tmp/.X11-unix:rw
+        - ..:/root/MaskRCNN
+        - ${CNN_MODEL_DIR}:/root/MaskRCNN/model
+        - ${DATASET_DIR}:/root/Dataset
+        # - maskrcnn_root:/root
+    cap_add:
+        - SYS_PTRACE
+    # ports:
+        # - ${PORT}:8888
+    # privileged: true
+    entrypoint: /entrypoint.sh
+    network_mode: host
+
+# volumes:
+#     maskrcnn_root:

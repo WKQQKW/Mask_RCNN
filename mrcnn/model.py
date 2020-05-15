@@ -2446,6 +2446,8 @@ class MaskRCNN():
 
         # Translate normalized coordinates in the resized image to pixel
         # coordinates in the original image before resizing
+        # https://github.com/matterport/Mask_RCNN/pull/515/files
+        window = np.float32(window)
         window = utils.norm_boxes(window, image_shape[:2])
         wy1, wx1, wy2, wx2 = window
         shift = np.array([wy1, wx1, wy1, wx1])
